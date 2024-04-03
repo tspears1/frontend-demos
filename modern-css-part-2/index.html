@@ -670,7 +670,8 @@
                     </code-block>
                     <p>Be very careful not to overuse. This pseudo-class can increase the specificity of a rule. For
                         example, <code>#foo:not(#bar)</code> will match the same element as the simpler
-                        <code>#foo</code>, but has the higher specificity of <em>two id selectors.</em></p>
+                        <code>#foo</code>, but has the higher specificity of <em>two id selectors.</em>
+                    </p>
                 </div>
                 <div class="stack">
                     <h3><code>:where()</code></h3>
@@ -789,8 +790,7 @@
                     <p>It can be used to style an element based on the existance of a selector in the ancestor chain.
                     </p>
                     <div class="island">
-                        <p><strong>NOTE:</strong> This is currently not supported in Firefox. It can be enabled using an
-                            experimental flag.</p>
+                        <p><strong>NOTE:</strong> This is finally supported in all major browsers.</p>
                     </div>
                     <code-block lang="css">
                         .fancy-box {
