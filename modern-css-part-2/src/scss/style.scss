@@ -1,0 +1,205 @@
+@use 'sass:meta';
+
+@import 'open-props/style';
+@import "open-props/normalize";
+@import "open-props/buttons";
+
+@import 'prismjs/themes/prism-tomorrow.css';
+
+@layer utils {
+    @include meta.load-css('utilities');
+}
+
+:root {
+    --size-content-4: 80ch;
+}
+
+body {
+    --accent-color: var(--pink-6);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-fluid-1);
+}
+
+:where(:not(pre) > code) {
+    color: var(--text-2);
+}
+
+:where(iframe) {
+    min-inline-size: var(--size-content-4);
+}
+
+#app {
+    align-items: start;
+    display: grid;
+    grid-auto-columns: 100vw;
+    grid-auto-flow: column;
+    height: 100vh;
+    justify-items: center;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    margin-inline: auto;
+    text-align: center;
+
+    &:where(h3, h4, h5, h6) {
+        margin-block-start: var(--size-fluid-3);
+    }
+
+    &::after {
+        background: var(--accent-color);
+        block-size: 0.5rem;
+        border-radius: var(--radius-3);
+        content: '';
+        display: block;
+        inline-size: var(--size-6);
+        margin: var(--size-fluid-1) auto ;
+    }
+}
+
+.section {
+    align-content: start;
+    border-right: 2px solid var(--accent-color);
+    display: grid;
+    grid-auto-flow: columns;
+    gap: var(--size-fluid-3);
+    inline-size: 100vw;
+    justify-content: center;
+    justify-items: center;
+    min-block-size: 100vh;
+    padding: 8vh 1rem;
+    position: relative;
+    scroll-snap-align: start;
+
+    &.-theme-light {
+        --accent-color: var(--blue-5);
+        --text-1: var(--gray-11);
+        --surface-2: var(--blue-12);
+        --surface-3: var(--blue-11);
+        background: var(--blue-0);
+        color: var(--gray-11);
+    }
+
+    --display-flags: none;
+
+    &:has(input:checked) {
+        --display-flags: inline-block;
+    }
+
+    .title {
+        line-height: 2;
+        text-align: center;
+        text-transform: uppercase;
+        max-inline-size: var(--size-content-4);
+    }
+
+    .wrapper {
+        display: grid;
+        gap: var(--size-fluid-6);
+        min-inline-size: 80vw;
+    }
+
+    .toggle {
+        align-items: center;
+        border-radius: var(--radius-1);
+        border: 1px solid var(--blue-11);
+        color: var(--blue-11);
+        display: flex;
+        font-size: var(--font-size-fluid-0);
+        line-height: 1;
+        padding: 0.25em 0.75em;
+    }
+
+    .flag {
+        background: var(--blue-6);
+        border-radius: var(--radius-1);
+        font-size: 0.75em;
+        padding: 0.25em 0.5em;
+
+        display: var(--display-flags); // hide hint flags.
+    }
+}
+
+.box {
+    align-items: center;
+    background: var(--blue-11);
+    box-shadow: var(--shadow-2);
+    color: var(--gray-0);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row; // Flex and grid always flow with writing direction.
+
+    border-block-end: var(--size-2) solid var(--yellow-5);
+    border-start-start-radius: var(--radius-2);
+    border-start-end-radius: var(--radius-2);
+    block-size: fit-content;
+    inline-size: fit-content;
+    margin-inline: var(--size-fluid-4);
+    padding-block: var(--size-fluid-2);
+    padding-inline-start: var(--size-fluid-3);
+    padding-inline-end: var(--size-fluid-8);
+
+    &.-fade {
+        opacity: 0.45;
+        transition: opacity 500ms var(--ease-out-3);
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+}
+
+.split.-border {
+    border: 1px solid var(--blue-5);
+    border-radius: var(--radius-2);
+    padding: var(--size-fluid-2);
+}
+
+.icon {
+    aspect-ratio: var(--ratio-square);
+    border-radius: 50%;
+    background: var(--blue-4);
+
+    block-size: var(--size-fluid-5);
+    margin-inline-end: var(--size-fluid-4);
+}
+
+.lang--rtl {
+    direction: rtl;
+}
+
+.vertical-lr {
+    writing-mode: vertical-lr;
+}
+
+.vertical-rl {
+    writing-mode: vertical-rl;
+}
+
+.stack {
+    display: grid;
+    gap: var(--size-fluid-2);
+
+    &.-large {
+        gap: var(--size-fluid-4);
+    }
+
+    p {
+        margin-inline: auto;
+    }
+
+    :where(ul) {
+        margin-inline: auto;
+        min-inline-size: var(--size-content-3);
+        max-inline-size: var(--size-content-3);
+    }
+}
+
+.island {
+    border-radius: var(--radius-2);
+    border: 6px solid var(--accent-color);
+    padding: var(--size-fluid-1) var(--size-fluid-3);
+}

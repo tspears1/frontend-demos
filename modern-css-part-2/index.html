@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Frontend Demos] Modern Principles of CSS: Part II</title>
+  </head>
+  <body>
+    <div id="app">
+      <section class="section">
+        <div class="logo" style="max-block-size: 20rem; aspect-ratio: 1;">
+          <img src="./src/logo.svg" alt="logo" />
+        </div>
+        <code>[ Frontend Demos ]</code>
+        <p><small>Last Updated: 2023.09.06 | by Tim Spears</small></p>
+        <h1 class="title">Modern Principles of CSS: Part II</h1>
+        <ol style="font-size: var(--size-fluid-2); line-height: 2;">
+          <li>Logical Properties</li>
+          <li>Cascade Layers</li>
+          <li>"S.O.B." Pseudo Class Functions</li>
+          <li>Advanced Input Media Queries</li>
+          <li>HSL Color Format</li>
+        </ol>
+        <br />
+        <br />
+        <div class="island">
+          <p>Clone the Repo:</p>
+          <code>https://github.com/imarc/frontend-demos/tree/main/modern-css-part-2</code>
+        </div>
+      </section>
+      <section class="section">
+        <h2>[1] Logical Properties</h2>
+        <p>CSS Properites that use values relative to Flow direction (<em>block</em> or <em>inline</em>) and position (<em>start</em> or <em>end</em>) rather than physical direction (<em>top, left, right, bottom</em>) or size (<em>height, width</em>) of the viewport.</p>
+        <div class="split">
+          <figure>
+            <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow/mdn-horizontal.png" alt="Block and inline layout in normal flow" />
+            <figcaption>Horizontal Writing Mode</figcaption>
+          </figure>
+          <figure>
+            <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow/mdn-vertical.png" alt="Block and inline layout in normal flow" />
+            <figcaption>Vertical Writing Mode</figcaption>
+          </figure>
+        </div>
+        <h3>Block</h3>
+        <p>The dimension <code><em>perpendicular</em></code> to the flow of text within a line, i.e., the vertical dimension in horizontal writing modes, and the horizontal dimension in vertical writing modes. For standard English text, it is the vertical dimension.</p>
+        <h3>Inline</h3>
+        <p>The dimension <code><em>parallel</em></code> to the flow of text within a line, i.e., the horizontal dimension in horizontal writing modes, and the vertical dimension in vertical writing modes. For standard English text, it is the horizontal dimension.</p>
+        <h2 class="title">Physical Properties vs Logical Properties</h2>
+        <h3>Sizes</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>height</code></td>
+              <td><code>block-size</code></td>
+            </tr>
+            <tr>
+              <td><code>min-height</code></td>
+              <td><code>min-block-size</code></td>
+            </tr>
+            <tr>
+              <td><code>max-height</code></td>
+              <td><code>max-block-size</code></td>
+            </tr>
+            <tr>
+              <td><code>width</code></td>
+              <td><code>inline-size</code></td>
+            </tr>
+            <tr>
+              <td><code>min-width</code></td>
+              <td><code>min-inline-size</code></td>
+            </tr>
+            <tr>
+              <td><code>max-width</code></td>
+              <td><code>max-inline-size</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Spacing</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>margin-top</code></td>
+              <td><code>margin-block-start</code></td>
+            </tr>
+            <tr>
+              <td><code>margin-bottom</code></td>
+              <td><code>margin-block-end</code></td>
+            </tr>
+            <tr>
+              <td><code>margin-left</code></td>
+              <td><code>margin-inline-start</code></td>
+            </tr>
+            <tr>
+              <td><code>margin-right</code></td>
+              <td><code>margin-inline-end</code></td>
+            </tr>
+            <tr>
+              <td><code>margin (y-axis)</code></td>
+              <td><code>margin-block</code></td>
+            </tr>
+            <tr>
+              <td><code>margin (x-axis)</code></td>
+              <td><code>margin-inline</code></td>
+            </tr>
+            <tr>
+              <td><code>padding-top</code></td>
+              <td><code>padding-block-start</code></td>
+            </tr>
+            <tr>
+              <td><code>padding-bottom</code></td>
+              <td><code>padding-block-end</code></td>
+            </tr>
+            <tr>
+              <td><code>padding-left</code></td>
+              <td><code>padding-inline-start</code></td>
+            </tr>
+            <tr>
+              <td><code>padding-right</code></td>
+              <td><code>padding-inline-end</code></td>
+            </tr>
+            <tr>
+              <td><code>padding (y-axis)</code></td>
+              <td><code>padding-block</code></td>
+            </tr>
+            <tr>
+              <td><code>padding (x-axis)</code></td>
+              <td><code>padding-inline</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Border</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>border-top</code></td>
+              <td><code>border-block-start</code></td>
+            </tr>
+            <tr>
+              <td><code>border-top-color</code></td>
+              <td><code>border-block-start-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-top-style</code></td>
+              <td><code>border-block-start-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-top-width</code></td>
+              <td><code>border-block-start-width</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom</code></td>
+              <td><code>border-block-end</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom-color</code></td>
+              <td><code>border-block-end-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom-style</code></td>
+              <td><code>border-block-end-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom-width</code></td>
+              <td><code>border-block-end-width</code></td>
+            </tr>
+            <tr>
+              <td><code>border-left</code></td>
+              <td><code>border-inline-start</code></td>
+            </tr>
+            <tr>
+              <td><code>border-left-color</code></td>
+              <td><code>border-inline-start-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-left-style</code></td>
+              <td><code>border-inline-start-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-left-width</code></td>
+              <td><code>border-inline-start-width</code></td>
+            </tr>
+            <tr>
+              <td><code>border-right</code></td>
+              <td><code>border-inline-end</code></td>
+            </tr>
+            <tr>
+              <td><code>border-right-color</code></td>
+              <td><code>border-inline-end-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-right-style</code></td>
+              <td><code>border-inline-end-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-right-width</code></td>
+              <td><code>border-inline-end-width</code></td>
+            </tr>
+            <tr>
+              <td><code>border (y-axis)</code></td>
+              <td><code>border-block</code></td>
+            </tr>
+            <tr>
+              <td><code>border-color (y-axis)</code></td>
+              <td><code>border-block-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-style (y-axis)</code></td>
+              <td><code>border-block-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-width (y-axis)</code></td>
+              <td><code>border-block-width</code></td>
+            </tr>
+            <tr>
+              <td><code>border (x-axis)</code></td>
+              <td><code>border-inline</code></td>
+            </tr>
+            <tr>
+              <td><code>border-color (x-axis)</code></td>
+              <td><code>border-inline-color</code></td>
+            </tr>
+            <tr>
+              <td><code>border-style (x-axis)</code></td>
+              <td><code>border-inline-style</code></td>
+            </tr>
+            <tr>
+              <td><code>border-width (x-axis)</code></td>
+              <td><code>border-inline-width</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Border Radius</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>border-top-left-radius</code></td>
+              <td><code>border-start-start-radius</code></td>
+            </tr>
+            <tr>
+              <td><code>border-top-right-radius</code></td>
+              <td><code>border-start-end-radius</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom-left-radius</code></td>
+              <td><code>border-end-start-radius</code></td>
+            </tr>
+            <tr>
+              <td><code>border-bottom-right-radius</code></td>
+              <td><code>border-end-end-radius</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Positioning</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>top</code></td>
+              <td><code>inset-block-start</code></td>
+            </tr>
+            <tr>
+              <td><code>bottom</code></td>
+              <td><code>inset-block-end</code></td>
+            </tr>
+            <tr>
+              <td><code>left</code></td>
+              <td><code>inset-inline-start</code></td>
+            </tr>
+            <tr>
+              <td><code>right</code></td>
+              <td><code>inset-inline-end</code></td>
+            </tr>
+            <tr>
+              <td><code>inset (y-axis)</code></td>
+              <td><code>inset-block</code></td>
+            </tr>
+            <tr>
+              <td><code>inset (x-axis)</code></td>
+              <td><code>inset-inline</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Text</h3>
+        <table style="min-inline-size:80vw;">
+          <thead>
+            <tr>
+              <th>Physical Properties</th>
+              <th>Logical Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>text-align: left</code></td>
+              <td><code>text-align: start</code></td>
+            </tr>
+            <tr>
+              <td><code>text-align: right</code></td>
+              <td><code>text-align: end</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="section -theme-light">
+        <h2 class="title">Logical Properties [ Demo ]</h2>
+        <div class='toggle'>
+            <label>
+              <input type='checkbox' />
+              <span>Show Flow</span>
+          </label>
+        </div>
+        <div class="wrapper">
+          <div class="split -border">
+            <div class="box">
+              <div class="icon">
+              </div>
+              <div class="text">
+                <p><span class="flag">[ START > ]</span> Left to Right Text</p>
+                <p>(Default in English) <span class="flag">[ End > ]</span></p>
+              </div>
+            </div>
+
+            <div class="stack">
+              <code-block lang="html">
+<div class="box">
+  <div class="icon"></div>
+  <div class="text">
+    <p>Left to Right Text</p>
+    <p>(Default in English)</p>
+  </div>
+</div>
+              </code-block>
+
+              <code-block lang="css">
+.box {
+  display: flex;
+  flex-direction: row;
+  /* Flex and grid always flow with writing direction. */
+  border-block-end: var(--size-2) solid var(--yellow-5);
+  border-start-start-radius: var(--radius-2);
+  border-start-end-radius: var(--radius-2);
+  inline-size: fit-content;
+  margin-inline: var(--size-fluid-4);
+  padding-block: var(--size-fluid-2);
+  padding-inline-start: var(--size-fluid-3);
+  padding-inline-end: var(--size-fluid-8);
+}
+              </code-block>
+            </div>
+          </div>
+
+          <div class="split -border">
+            <div class="box lang--rtl">
+              <div class="icon">
+              </div>
+              <div class="text">
+                <p><span class="flag">[ START > ]</span> Right to Left Text</p>
+                <p>(direction property) <span class="flag">[ End > ]</span></p>
+              </div>
+            </div>
+            <div class="stack">
+              <code-block lang="html">
+<div class="box lang--rtl">
+  <div class="icon"></div>
+  <div class="text">
+    <p>Right to Left Text</p>
+    <p>(direction property)</p>
+  </div>
+</div>
+              </code-block>
+              <code-block lang="css">
+.lang--rtl {
+    direction: rtl;
+}
+              </code-block>
+            </div>
+          </div>
+
+          <div class="split -border">
+            <div class="box" dir="rtl">
+              <div class="icon">
+              </div>
+              <div class="text">
+                <p><span class="flag">[ START > ]</span> Right to Left Text</p>
+                <p>(dir='rtl' attribute) <span class="flag">[ End > ]</span></p>
+              </div>
+            </div>
+            <code-block lang="html">
+<div class="box" dir="rtl">
+  <div class="icon"></div>
+  <div class="text">
+    <p>Right to Left Text</p>
+    <p>(dir='rtl' attribute)</p>
+  </div>
+</div>
+            </code-block>
+          </div>
+          <div class="split -border">
+            <div class="box vertical-lr">
+              <div class="icon">
+              </div>
+              <div class="text">
+                <p><span class="flag">[ START > ]</span> Vertical Text</p>
+                <p>Left to Right Flow <span class="flag">[ End > ]</span></p>
+              </div>
+            </div>
+
+            <div class="stack">
+              <code-block lang="html">
+<div class="box vertical-lr">
+  <div class="icon"></div>
+  <div class="text">
+    <p>Vertical Text</p>
+    <p>Left to Right Flow</p>
+  </div>
+</div>
+              </code-block>
+              <code-block lang="css">
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
+              </code-block>
+            </div>
+
+          </div>
+          <div class="split -border">
+
+            <div class="box vertical-rl">
+              <div class="icon">
+              </div>
+              <div class="text">
+                <p><span class="flag">[ START > ]</span> Vertical Text</p>
+                <p>Right to Left Flow <span class="flag">[ End > ]</span></p>
+              </div>
+            </div>
+            <div class="stack">
+              <code-block lang="html">
+<div class="box vertical-rl">
+  <div class="icon"></div>
+  <div class="text">
+    <p>Vertical Text</p>
+    <p>Right to Left Flow</p>
+  </div>
+</div>
+              </code-block>
+              <code-block lang="css">
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
+              </code-block>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class='section'>
+        <h2>[2] Cascade Layers</h2>
+        <p>The <code>@layer</code> CSS at-rule is used to declare a cascade layer and can also be used to define the order of precedence in case of multiple cascade layers.</p>
+        <div class="stack -large">
+          <div class='stack'>
+            <h3>Syntax</h3>
+            <code-block lang="css">
+    /* Declare layer with rules. */
+    @layer layer-name { rules }
+
+    /* Declare layer without rules. */
+    @layer layer-name;
+
+    /* Declare multiple layers at once. */
+    /* Useful for setting order first before difining rules. */
+    @layer layer-name, layer-name, layer-name;
+
+    /* Anonymous Layer */
+    /* Each anonymous layer is unique, and added to the layer order where it is encountered. */
+    /* Anonymous layers can’t be referenced from other layer rules for sorting or appending more styles. */
+    @layer { rules }
+
+    /* import layer (css) */
+    @import './theme.css' layer(utilities);
+
+    /* import layer (scss) */
+    @use 'sass:meta';
+    @layer buttons {
+        @include meta.load-css('default-button'); /* _default-button.scss */
+    }
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3>Stacking Order</h3>
+            <p>Layers are stacked in the order they first appear in the stylesheet. The first layer encountered sits at the bottom (least powerful), and the last layer at the top (most powerful). But then, above that, <em>un-layered styles have the highest priority</em>.</p>
+            <code-block lang="css">
+    @layer layer-1 {
+      a {
+        color: red;
+      }
+    }
+
+    @layer layer-2 {
+      a {
+        color: orange;
+      }
+    }
+
+    @layer layer-3 {
+      a {
+        color: yellow;
+      }
+    }
+
+    /* un-layered */
+    a {
+      color: green;
+    }
+            </code-block>
+            <ol>
+              <li>un-layered styles (most powerful)</li>
+              <li>layer-3</li>
+              <li>layer-2</li>
+              <li>layer-1 (least powerful)</li>
+            </ol>
+            <h4>Important Layers</h4>
+            <p>Any important styles are applied in a reverse order.</p>
+            <code-block lang="css">
+    @layer layer-1 { a { color: red !important; } }
+
+    @layer layer-2 { a { color: orange !important; } }
+
+    @layer layer-3 { a { color: yellow !important; } }
+
+    /* un-layered */ a { color: green !important; }
+            </code-block>
+            <ol>
+              <li><code>!important</code> layer-1 (most powerful)</li>
+              <li><code>!important</code> layer-2</li>
+              <li><code>!important</code> layer-3</li>
+              <li><code>!important</code> un-layered styles</li>
+              <li>normal un-layered styles</li>
+              <li>normal layer-3</li>
+              <li>normal layer-2</li>
+              <li>normal layer-1 (least powerful)</li>
+            </ol>
+            <h4>Grouped Layers</h4>
+            <p>Layers can also be grouped, allowing us to do more complicated sorting of top-level and nested layers.</p>
+            <code-block lang="css">
+    @layer layer-1 { a { color: red; } }
+
+    @layer layer-2 { a { color: orange; } }
+
+    @layer layer-3 {
+      @layer sub-layer-1 { a { color: yellow; } }
+      @layer sub-layer-2 { a { color: green; } }
+      /* un-nested */ a { color: blue; }
+    }
+
+    /* un-layered */ a { color: indigo; }
+            </code-block>
+            <ol>
+              <li>un-layered styles (most powerful)</li>
+              <li>layer-3<ol>
+              <li>layer-3 un-nested</li>
+              <li>layer-3 sub-layer-2</li>
+              <li>layer-3 sub-layer-1</li></ol></li>
+              <li>layer-2</li>
+              <li>layer-1 (least powerful)</li>
+            </ol>
+            <code-block lang="css">
+/* We can assign to a grouped layer with the following syntax: */
+@layer components.stats-card {
+  a {
+    color: yellow;
+  }
+}
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3>Why use Cascade Layers?</h3>
+            <p>Cascade layers can help us solve several different problems including specificity complexity, organization and greater access to move around the cascade.</p>
+            <code-block lang="css">
+    @layer framework {
+      .overly#powerful .framework.widget {
+        color: maroon;
+      }
+    }
+
+    /* Despire the overly specific selector above, this will still win. */
+    @layer site {
+      .widget {
+        color: rebeccapurple;
+      }
+    }
+            </code-block>
+        </div>
+      </section>
+
+      <section class='section -theme-light'>
+        <div class="stack -large">
+          <div class="stack">
+            <h2>[3] "S.O.B." Pseudo Class Functions</h2>
+            <p>"S.O.B." (State of Being) Pseudo Class Functions are another set of tools that help us move around the cascade.</p>
+            <p>They can manipulate specificity without the need for a new selector or allow us to make conditional choices based on the state of an element.</p>
+          </div>
+          <div class="stack">
+            <h3><code>:not()</code></h3>
+            <p>The <code>:not()</code> pseudo-class function takes a selector list as an argument, and returns true if the element does not match any of the selectors in the list.</p>
+            <code-block lang="css">
+/* Selects all elements that are not .fancy elements */
+:not(.fancy) {
+  color: coral;
+}
+
+/* Selects all paragraph elements that are not .fancy elements or .super > .cool elements */
+p:not(.fancy, .super > .cool) {
+  color: coral;
+}
+
+/* It can also be used to negate pseudo-classes. */
+:not(:hover) {
+  color: coral;
+}
+            </code-block>
+            <p>Be very careful not to overuse. This pseudo-class can increase the specificity of a rule. For example, <code>#foo:not(#bar)</code> will match the same element as the simpler <code>#foo</code>, but has the higher specificity of <em>two id selectors.</em></p>
+          </div>
+          <div class="stack">
+            <h3><code>:where()</code></h3>
+            <p>The <code>:where()</code> pseudo-class function takes a selector list as an argument, and returns true if the element matches any of the selectors in the list.</p>
+            <p>It is similar to <code>:is()</code> but always has <code>0</code> specificity. This can be very useful for defaults, resets and humbling an elements ego.</p>
+            <code-block lang="css">
+ol {
+  color: darkblue;
+}
+
+/* Despite the order of the cascade, the ol will be darkblue because of the zero specificity of the :where() function. */
+:where(ol, ul) {
+  color: pink;
+}
+            </code-block>
+            <code-block lang="html">
+<ol>
+  <li>Ordered Item 1</li> <!-- darkblue -->
+  <li>Ordered Item 2</li> <!-- darkblue -->
+  <li>
+    <ul>
+      <li>Unordered Item 2.1</li> <!-- pink -->
+      <li>Unordered Item 2.2</li> <!-- pink -->
+    </ul>
+  </li>
+</ol>
+            </code-block>
+            <p>It can also be used with other pseudo-class functions. This becomes particularly handy when used with <code>:not()</code>, allowing you to check for the existance of a selector while still maintaing zero specificity so it's easy to override later.</p>
+            <code-block lang="css">
+/* Selects all elements that are not .fancy elements */
+:where(:not(.fancy)) {
+  color: coral;
+}
+            </code-block>
+          </div>
+
+          <div class="stack">
+            <h3><code>:is()</code></h3>
+            <p>The <code>:is()</code> pseudo-class function takes a selector list as an argument, and returns true if the element matches any of the selectors in the list.</p>
+            <p>It is similar to <code>:where()</code> but has the specificity of the most specific selector in the list.</p>
+            <p>Both pseudo-class functions can be used to group selectors together, making it easier to read and maintain.</p>
+            <code-block lang="css">
+/* 3-deep (or more) unordered lists use a square */
+ol ol ul,
+ol ul ul,
+ol menu ul,
+ol dir ul,
+ol ol menu,
+ol ul menu,
+ol menu menu,
+ol dir menu,
+ol ol dir,
+ol ul dir,
+ol menu dir,
+ol dir dir,
+ul ol ul,
+ul ul ul,
+ul menu ul,
+ul dir ul,
+ul ol menu,
+ul ul menu,
+ul menu menu,
+ul dir menu,
+ul ol dir,
+ul ul dir,
+ul menu dir,
+ul dir dir,
+menu ol ul,
+menu ul ul,
+menu menu ul,
+menu dir ul,
+menu ol menu,
+menu ul menu,
+menu menu menu,
+menu dir menu,
+menu ol dir,
+menu ul dir,
+menu menu dir,
+menu dir dir,
+dir ol ul,
+dir ul ul,
+dir menu ul,
+dir dir ul,
+dir ol menu,
+dir ul menu,
+dir menu menu,
+dir dir menu,
+dir ol dir,
+dir ul dir,
+dir menu dir,
+dir dir dir {
+  list-style-type: square;
+}
+
+/* Using :is() - 3-deep (or more) unordered lists use a square */
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) :is(ul, menu, dir) {
+  list-style-type: square;
+}
+            </code-block>
+        </div>
+
+        <div class="stack">
+          <h3><code>:has()</code></h3>
+          <p>The <code>:has()</code> pseudo-class function takes a selector list as an argument, and returns true if the element has an ancestor element that matches any of the selectors in the list.</p>
+          <p>It is similar to <code>:where()</code> but only matches if the element has an ancestor that matches the selector.</p>
+          <p>It can be used to style an element based on the existance of a selector in the ancestor chain.</p>
+          <div class="island">
+            <p><strong>NOTE:</strong> This is currently not supported in Firefox. It can be enabled using an experimental flag.</p>
+          </div>
+          <code-block lang="css">
+.fancy-box {
+  background: lightblue;
+}
+
+.fancy-box:has(blockquote) {
+  background: lightgreen;
+}
+          </code-block>
+          <code-block lang="html">
+<div class="boxes">
+  <div class="fancy-box">
+    <p>This fancy box will be lightblue.</p>
+  </div>
+
+  <div class="fancy-box">
+    <p>This fancy box will be lightgreen.</p>
+    <blockquote>
+      <p>Blockquote</p>
+    </blockquote>
+  </div>
+</div>
+          </code-block>
+          <p><code>:has()</code> can also be used to leverage input values to create change of state in the component, without the need for extra javascript.</p>
+          <p>In the Logical Properties demo earlier we used the checkbox to change the display state of the helper flags:</p>
+          <code-block lang="css">
+.section {
+  --display-flags: none;
+
+  &:has(input:checked) {
+      --display-flags: inline-block;
+  }
+
+  .flag {
+    display: var(--display-flags);
+  }
+}
+          </code-block>
+        </div>
+      </section>
+
+      <section class='section'>
+        <div class="stack -large">
+          <div class="stack">
+            <h2>[4] Advanced Input Media Queries</h2>
+            <p>Media Queries were originally designed to allow us to conditionally set CSS Properties based on the viewport size.</p>
+            <p>However, gone are the days when we can reliably identify a mobile or tablet device based on screen size alone.</p>
+            <p>Recently many of the features from Media Queries Version 5 have become very popular:</p>
+            <ul>
+              <li>
+                <code>prefers-color-scheme</code>
+              </li>
+              <li>
+                <code>prefers-contrast</code>
+              </li>
+              <li>
+                <code>prefers-reduced-motion</code>
+              </li>
+            </ul>
+            <p>However in Version 4, some oft overlooked features were released that can also help us with accessibility concerns, specifically with how the user interacts with the page:</p>
+            <ul>
+              <li>
+                <code>hover</code>
+              </li>
+              <li>
+                <code>pointer</code>
+              </li>
+              <li>
+                <code>any-hover</code>
+              </li>
+              <li>
+                <code>any-pointer</code>
+              </li>
+            </ul>
+          </div>
+          <div class="stack">
+            <h3><code>hover</code></h3>
+            <p>Does the primary input mechanism allow the user to hover over elements?</p>
+            <code-block lang="css">
+/* when hover is supported by the primary input */
+@media (hover: hover) {
+  a:hover {
+    color: white;
+    background: black;
+  }
+}
+
+/* The primary input mechanism cannot hover at all or cannot conveniently hover */
+/* (e.g., many mobile devices emulate hovering when the user performs an inconvenient long tap), */
+/* or there is no primary pointing input mechanism. */
+@media (hover: none) {
+  a {
+    color: white;
+    background: black;
+  }
+}
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3><code>pointer</code></h3>
+            <p>Is the primary input mechanism a pointing device, and if so, how accurate is it?</p>
+            <code-block lang="css">
+/* The primary input mechanism includes an accurate pointing device, such as a mouse. */
+@media (pointer: fine) {
+  input[type="checkbox"] {
+    block-size: 15px;
+    border-inline-size: 1px;
+    border-color: blue;
+    inline-size: 15px;
+  }
+}
+
+/* The primary input mechanism includes a pointing device of limited accuracy, such as a finger on a touchscreen. */
+@media (pointer: coarse) {
+  input[type="checkbox"] {
+    block-size: 30px;
+    border-inline-size: 2px;
+    border-color: red;
+    inline-size: 30px;
+  }
+}
+
+/* The primary input mechanism does not include a pointing device. */
+@media (pointer: none) {
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3><code>any-hover</code></h3>
+            <p>Does any available input mechanism allow the user to hover over elements?</p>
+            <code-block lang="css">
+/* One or more available input mechanisms can conveniently hover over elements. */
+/* Such as an iPad using a bluetooth mouse. */
+@media (any-hover: hover) {
+  a:hover {
+    color: white;
+    background: black;
+  }
+}
+
+/* None of the available input mechanism(s) can hover conveniently, or there is no pointing input mechanism. */
+@media (any-hover: none) {
+  a {
+    color: white;
+    background: black;
+  }
+}
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3><code>any-pointer</code></h3>
+            <p>Is any available input mechanism a pointing device, and if so, how accurate is it?</p>
+            <code-block lang="css">
+* At least one input mechanism includes an accurate pointing device. */
+@media (any-pointer: fine) {
+  input[type="checkbox"] {
+    block-size: 15px;
+    border-inline-size: 1px;
+    border-color: blue;
+    inline-size: 15px;
+  }
+}
+
+/* At least one input mechanism includes a pointing device of limited accuracy. */
+@media (any-pointer: coarse) {
+  input[type="checkbox"] {
+    block-size: 30px;
+    border-inline-size: 2px;
+    border-color: red;
+    inline-size: 30px;
+  }
+}
+
+/* No pointing device is available. */
+@media (any-pointer: none) {
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+            </code-block>
+          </div>
+          <div class="stack">
+            <h3>Usage</h3>
+            <p>Just like the other Media Queries, these can be be combined and used together:</p>
+            <code-block lang="css">
+/* The primary input mechanism includes an accurate pointing device, such as a mouse. */
+/* AND One or more available input mechanisms can conveniently hover over elements. */
+@media (pointer: fine) and (any-hover: hover) {
+  ...
+}
+            </code-block>
+            <p>For quick use, SCSS mixins have been added to the new Component Library:</p>
+            <code-block lang="css">
+/* === Hover @media query mixin ============================================ */
+/* $any (boolean): True will query 'any-hover', false will query 'hover'. Default is true. */
+/* $value (string): The value to query. Options: 'hover' or 'none'. Default is 'hover'. */
+@mixin hover($any: true, $value: hover) {
+    @if $any {
+        @media (any-hover: $value) {
+            &:hover {
+                @content;
+            }
+        }
+    } @else {
+        @media (hover: $value) {
+            &:hover {
+                @content;
+            }
+        }
+    }
+}
+
+/* Usage */
+.card {
+    @include hover() {
+        background: var(--yellow-5);
+    }
+}
+            </code-block>
+          </div>
+        </div>
+      </section>
+
+      <section class='section'>
+        <div class="stack -large">
+          <div class="stack">
+            <h2>[5] HSL Color Format</h2>
+            <p>Traditionally we've used hexadecimal format or the <code>rgb()</code> color function.</p>
+            <code-block lang="css">
+:root {
+  /* Hexadecimal */
+  /* The first two digits represent the red channel, the next two the green, and the last two the blue. */
+  /* In hexadecimal notation, each digit can be 0-9 or A-F. */
+  /* '00' represents the least intensity of that channel, 'FF' the most. */
+  --red: #ff0000;
+  --green: #00ff00;
+  --blue: #0000ff;
+
+  /* RGB */
+  /* The first number represents the red channel, the second the green, and the last the blue. */
+  /* In decimal notation, each number can be 0-255. */
+  /* '0' represents the least intensity of that channel, '255' the most. */
+  --red: rgb(255 0 0);
+  --green: rgb(0 255 0);
+  --blue: rgb(0 0 255);
+}
+            </code-block>
+            <p>These formats are great for computers, but not so great for humans.</p>
+            <p>It's hard to read and understand what the color is, and it's hard to manipulate the color.</p>
+            <code-block lang="css">
+:root {
+  /* Primary color palette */
+  --color-primary-50:       #f2e5ff; /* Hexadecimal */      rgb(242 229 255); /* rgb() */
+  --color-primary-100:      #e6ccff; /* Hexadecimal */      rgb(230 204 255); /* rgb() */
+  --color-primary-200:      #cc99ff; /* Hexadecimal */      rgb(204 153 255); /* rgb() */
+  --color-primary-300:      #b366ff; /* Hexadecimal */      rgb(179 102 255); /* rgb() */
+  --color-primary-400:      #9933ff; /* Hexadecimal */      rgb(153 51 255); /* rgb() */
+  --color-primary-500:      #8000ff; /* Hexadecimal */      rgb(128 0 255); /* rgb() */
+  --color-primary-600:      #6600cc; /* Hexadecimal */      rgb(102 0 204); /* rgb() */
+  --color-primary-700:      #4d0099; /* Hexadecimal */      rgb(77 0 153); /* rgb() */
+  --color-primary-800:      #330066; /* Hexadecimal */      rgb(51 0 102); /* rgb() */
+  --color-primary-900:      #1a0033; /* Hexadecimal */      rgb(26 0 51); /* rgb() */
+  --color-primary-950:      #0d001a; /* Hexadecimal */      rgb(13 0 26); /* rgb() */
+}
+            </code-block>
+            <div class="island stack">
+              <h4>A Note on Syntax</h4>
+              <p>Traditionally when writing <code>rgb()</code> or <code>rgba()</code> colors, we've used commas between the values.</p>
+              <p>However, the CSS Color Module Level 4 spec allows us to use spaces instead, with a slash to separate the alpha channel.</p>
+              <p>It also no longer requires <code>rgba()</code> to have an alpha channel.</p>
+              <p>If no alpha channel is provided, it will default to <code>1</code>.</p>
+              <code-block lang="css">
+:root {
+  /* Traditional */
+  --red: rgb(255, 0, 0);
+  --red: rgba(255, 0, 0, 1);
+
+  /* Modern */
+  --red: rgb(255 0 0);
+  --red: rgb(255 0 0 / 1);
+}
+              </code-block>
+              <p>This new syntax also applies to <code>hsl()</code> and <code>hsla()</code> colors.</p>
+            </div>
+            <h3><code>hsl()</code></h3>
+            <p>The <code>hsl()</code> color format is another way of expressing color on the sRGB color space. It a great way to work with color. It's easy to read and understand, and allows us to easily manipulate the color.</p>
+            <code-block lang="css">
+:root {
+  /* HSL */
+  /* The first number represents the hue, the second the saturation, and the last the lightness. */
+  /* The hue is represented as an angle of the color circle, from 0 to 360 degrees. Somtimes the number is followed by 'deg'. */
+  /* The saturation and lightness are represented as percentages, from 0% to 100%. */
+  --red: hsl(0 100% 50%);
+  --green: hsl(120 100% 50%);
+  --blue: hsl(240 100% 50%);
+}
+            </code-block>
+            <figure>
+              <img src="https://www.maketecheasier.com/assets/uploads/2020/01/rgb-color-wheel.png" alt="RGB Color Wheel" />
+              <figcaption>RGB Color Wheel</figcaption>
+            </figure>
+            <p>It's also a great way to work with color in CSS, because it allows us to easily manipulate the color using CSS Custom Properties.</p>
+            <code-block lang="css">
+:root {
+  /* Primary color palette */
+  --color-primary-50:           hsl(270 100% 95%);
+  --color-primary-100:          hsl(271 100% 90%);
+  --color-primary-200:          hsl(270 100% 80%);
+  --color-primary-300:          hsl(270 100% 70%);
+  --color-primary-400:          hsl(270 100% 60%);
+  --color-primary-500:          hsl(270 100% 50%);
+  --color-primary-600:          hsl(270 100% 40%);
+  --color-primary-700:          hsl(270 100% 30%);
+  --color-primary-800:          hsl(270 100% 20%);
+  --color-primary-900:          hsl(271 100% 10%);
+  --color-primary-950:          hsl(270 100% 5%);
+}
+            </code-block>
+            <p>Using CSS Custom Properties, we can also store the HSL values to be used with or without an alpha channel.</p>
+            <p>These stored values become easier to quickly manipulate for animation or other transitional effects.</p>
+            <code-block lang="css">
+:root {
+  --color-primary-500:          270 100% 50%;
+}
+
+.box {
+  background: hsl(var(--color-primary-500));
+  border-color: hsl(var(--color-primary-500) / 0.5);
+}
+            </code-block>
+
+            <figure>
+              <p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="qBLqwxw" data-user="tspears1" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/tspears1/pen/qBLqwxw">
+                HSL color picker</a> by Tim Spears (<a href="https://codepen.io/tspears1">@tspears1</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              <figcaption>HSL Color Picker Demo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

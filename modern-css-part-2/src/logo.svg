@@ -1,0 +1,296 @@
+<svg class="AnimatedLogo__SOCLogo-sc-1ujxvyr-1 hUhpHO soc-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="748.163" height="748.163" viewBox="0 0 748.163 748.163" fill="#efefef">
+<defs>
+<mask id="soc-logo-shadow">
+<rect x="0" y="0" width="100%" height="100%" fill="white">
+</rect>
+<polygon class="soc-logo__shadow" points="84.683 374.081 376.624 693.354 668.565 374.081 84.683 374.081" fill="black" fill-rule="evenodd" style="--g: 1;">
+</polygon>
+</mask>
+<mask id="soc-logo-css">
+<rect x="0" y="0" width="100%" height="100%" fill="black">
+</rect>
+<path d="M320.17056,371.141a56.60842,56.60842,0,0,1,53.515-53.5151V371.141Z" fill="white">
+</path>
+<path d="M379.56477,317.55174h53.51566a56.60868,56.60868,0,0,1-53.51533,53.515Z" fill="white">
+</path>
+<path d="M320.17056,430.6122a56.60829,56.60829,0,0,1,53.515-53.51532V430.6122Z" fill="white">
+</path>
+<path d="M379.56477,377.02194h53.51566a56.60915,56.60915,0,0,1-53.51533,53.51565Z" fill="white">
+</path>
+<path d="M436.17146,371.141a56.60892,56.60892,0,0,1,53.515-53.5151l.00035,53.5151Z" fill="white">
+</path>
+<path d="M495.567,317.55174h53.51566a56.61,56.61,0,0,1-53.51566,53.515Z" fill="white">
+</path>
+<path d="M436.17146,430.6122a56.60879,56.60879,0,0,1,53.515-53.51532l.00035,53.51532Z" fill="white">
+</path>
+<path d="M495.567,377.02194h53.51566A56.6105,56.6105,0,0,1,495.567,430.53759Z" fill="white">
+</path>
+<path d="M198.28919,371.141a56.60888,56.60888,0,0,1,53.51523-53.5151V371.141Z" fill="white">
+</path>
+<path d="M311.27493,317.55042a56.609,56.609,0,0,1-53.515,53.51566V317.55043Z" fill="white">
+</path>
+<path d="M251.80442,430.53759a56.609,56.609,0,0,1-53.51523-53.51565h53.51523Z" fill="white">
+</path>
+<path d="M257.75994,377.09688A56.6089,56.6089,0,0,1,311.2756,430.6122H257.75994Z" fill="white">
+</path>
+</mask>
+<symbol id="soc-logo-quarter-nw">
+<path d="M0,53.5151A56.60887,56.60887,0,0,1,53.51523,0V53.5151Z">
+</path>
+</symbol>
+<symbol id="soc-logo-quarter-se">
+<path d="M53.515,0A56.60894,56.60894,0,0,1,0,53.51565V0Z">
+</path>
+</symbol>
+<symbol id="soc-logo-quarter-sw">
+<path d="M53.51523,53.51565A56.609,56.609,0,0,1,0,0H53.51523Z">
+</path>
+</symbol>
+<symbol id="soc-logo-quarter-ne">
+<path d="M0,0A56.60888,56.60888,0,0,1,53.51565,53.51532H0Z">
+</path>
+</symbol>
+<clipPath id="soc-logo-c1-tl">
+<rect width="53.5151" height="53.5151" x="198.28919" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-c1-tr">
+<rect width="53.5151" height="53.5151" x="257.76" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-c1-bl">
+<rect width="53.5151" height="53.5151" x="198.28919" y="377.09688">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-c1-br">
+<rect width="53.5151" height="53.5151" x="257.76" y="377.09688">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s1-tl">
+<rect width="53.5151" height="53.5151" x="320.17056" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s1-tr">
+<rect width="53.5151" height="53.5151" x="379.56477" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s1-bl">
+<rect width="53.5151" height="53.5151" x="320.17056" y="377.09688">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s1-br">
+<rect width="53.5151" height="53.5151" x="379.56477" y="377.09688">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s2-tl">
+<rect width="53.5151" height="53.5151" x="436.17146" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s2-tr">
+<rect width="53.5151" height="53.5151" x="495.567" y="317.6259">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s2-bl">
+<rect width="53.5151" height="53.5151" x="436.17146" y="377.09688">
+</rect>
+</clipPath>
+<clipPath id="soc-logo-s2-br">
+<rect width="53.5151" height="53.5151" x="495.567" y="377.09688">
+</rect>
+</clipPath>
+<linearGradient id="grad-lines" x1="41.93171" y1="373.9864" x2="712.54154" y2="373.9864" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#DC7B21">
+</stop>
+<stop offset="0.45611" stop-color="#DEB31A">
+</stop>
+<stop offset="1" stop-color="#3398ca">
+</stop>
+</linearGradient>
+<linearGradient id="grad-frame-outer" x1="0%" y1="0" x2="100%" y2="0" gradientUnits="objectBoundingBox">
+<stop offset="0" stop-color="#EFCB86">
+</stop>
+<stop offset="0.3333" stop-color="#DE9B1A">
+</stop>
+<stop offset="0.6667" stop-color="#99610c">
+</stop>
+<stop offset="1" stop-color="#74460a">
+</stop>
+</linearGradient>
+<linearGradient id="grad-frame-center" x1="0%" y1="0" x2="133%" y2="0" xlink:href="#grad-frame-outer">
+</linearGradient>
+<linearGradient id="grad-frame-inner" x1="0%" y1="0" x2="200%" y2="0" xlink:href="#grad-frame-outer">
+</linearGradient>
+<linearGradient id="grad-letter" x1="0%" y1="0" x2="100%" y2="0" gradientUnits="objectBoundingBox">
+<stop offset="0" stop-color="#bbb2a4">
+</stop>
+<stop offset="0.16667" stop-color="#ded5c6">
+</stop>
+<stop offset="0.33333" stop-color="#f1e8d8">
+</stop>
+<stop offset="0.5" stop-color="#f6edde">
+</stop>
+<stop offset="0.66667" stop-color="#f1e8d8">
+</stop>
+<stop offset="0.83333" stop-color="#ded5c6">
+</stop>
+<stop offset="1" stop-color="#bbb2a4">
+</stop>
+</linearGradient>
+</defs>
+<g class="soc-logo__lines" mask="url(#soc-logo-shadow)" style="--count: 8;">
+<rect x="263.49012" y="95.55474" width="227.49301" height="14.8365" fill="url(#grad-lines)" style="--i: 0;">
+</rect>
+<rect x="204.14411" y="153.41709" width="346.18502" height="19.782" fill="url(#grad-lines)" style="--i: 1;">
+</rect>
+<rect x="160.12916" y="216.22494" width="434.21492" height="24.7275" fill="url(#grad-lines)" style="--i: 2;">
+</rect>
+<rect x="78.52841" y="283.9783" width="597.41643" height="29.673" fill="url(#grad-lines)" style="--i: 3;">
+</rect>
+<rect x="41.93171" y="356.67715" width="670.60983" height="34.6185" fill="url(#grad-lines)" style="--i: 4;">
+</rect>
+<rect x="78.52841" y="434.81606" width="597.91098" height="28.6839" fill="url(#grad-lines)" style="--i: 5;">
+</rect>
+<rect x="160.12916" y="507.02036" width="434.21492" height="24.7275" fill="url(#grad-lines)" style="--i: 6;">
+</rect>
+<rect x="204.14411" y="574.77371" width="346.18502" height="19.782" fill="url(#grad-lines)" style="--i: 7;">
+</rect>
+<rect x="264.47922" y="637.58156" width="226.50391" height="14.8365" fill="url(#grad-lines)" style="--i: 8;">
+</rect>
+</g>
+<g class="soc-logo__diamond">
+<polygon points="374.081 82.14 82.14 374.081 374.081 666.022 666.022 374.081 374.081 82.14" fill="url(#grad-frame-outer)" style="--g: 0;">
+</polygon>
+<polygon points="376.624 154.721 84.683 374.081 376.624 593.442 668.565 374.081 376.624 154.721" fill="url(#grad-frame-center)" style="--g: 1;">
+</polygon>
+<polygon points="376.624 228.23 84.683 374.081 376.624 519.933 668.565 374.081 376.624 228.23" fill="url(#grad-frame-inner)" style="--g: 2;">
+</polygon>
+</g>
+<g class="soc-logo__css">
+<g style="--g: 1;">
+<g clip-path="url(#soc-logo-c1-tl)" style="--a: -270deg; --i: 1;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="198.28919" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="198.28919" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-c1-tr)" style="--a: 120deg; --i: 2;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="257.76" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="257.76" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-c1-bl)" style="--a: 150deg; --i: 3;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="sw">
+<use xlink:href="#soc-logo-quarter-sw" x="198.28919" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="sw">
+<use xlink:href="#soc-logo-quarter-sw" x="198.28919" y="377.09688">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-c1-br)" style="--a: 270deg; --i: 4;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="ne">
+<use xlink:href="#soc-logo-quarter-ne" x="257.76" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="ne">
+<use xlink:href="#soc-logo-quarter-ne" x="257.76" y="377.09688">
+</use>
+</g>
+</g>
+</g>
+<g style="--g: 2;">
+<g clip-path="url(#soc-logo-s1-tl)" style="--a: -270deg; --i: 1;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="320.17056" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="320.17056" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s1-tr)" style="--a: 120deg; --i: 2;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="379.56477" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="379.56477" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s1-bl)" style="--a: -120deg; --i: 3;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="320.17056" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="320.17056" y="377.09688">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s1-br)" style="--a: 135deg; --i: 4;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="379.56477" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="379.56477" y="377.09688">
+</use>
+</g>
+</g>
+</g>
+<g style="--g: 3;">
+<g clip-path="url(#soc-logo-s2-tl)" style="--a: -135deg; --i: 1;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="436.17146" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="436.17146" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s2-tr)" style="--a: 270deg; --i: 2;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="495.567" y="317.6259">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="495.567" y="317.6259">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s2-bl)" style="--a: 180deg; --i: 3;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="436.17146" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="nw">
+<use xlink:href="#soc-logo-quarter-nw" x="436.17146" y="377.09688">
+</use>
+</g>
+</g>
+<g clip-path="url(#soc-logo-s2-br)" style="--a: -180deg; --i: 4;">
+<g class="soc-logo__quarter soc-logo__quarter--ghost" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="495.567" y="377.09688">
+</use>
+</g>
+<g class="soc-logo__quarter soc-logo__quarter--grad" data-curve="se">
+<use xlink:href="#soc-logo-quarter-se" x="495.567" y="377.09688">
+</use>
+</g>
+</g>
+</g>
+</g>
+</svg>
